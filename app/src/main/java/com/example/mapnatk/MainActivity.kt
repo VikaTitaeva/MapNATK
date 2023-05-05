@@ -2,6 +2,9 @@ package com.example.mapnatk
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import android.os.Handler
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -13,34 +16,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.mapnatk.ui.theme.MapNATKTheme
 
 class MainActivity : ComponentActivity() {
+    // Splash screen timer
+    private val SPLASH_TIME_OUT = 3000L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            MapNATKTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
+        setContentView(R.layout.activity_main)
+        Handler().postDelayed(
+            {
+                val i = Intent(this@MainActivity, HomeActivity::class.java)
+                startActivity(i)
+                finish()
+            }, SPLASH_TIME_OUT)
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MapNATKTheme {
-        Greeting("Android")
-    }
-}
