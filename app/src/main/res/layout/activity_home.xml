@@ -7,7 +7,7 @@
     tools:context=".HomeActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/mapbutton"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="276dp"
@@ -21,7 +21,7 @@
         android:background="@drawable/roundstyle"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/navigatorbutton"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginBottom="340dp"

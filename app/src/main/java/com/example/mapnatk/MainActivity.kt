@@ -16,17 +16,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.mapnatk.ui.theme.MapNATKTheme
 
 class MainActivity : ComponentActivity() {
-    // Splash screen timer
-    private val SPLASH_TIME_OUT = 3000L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Handler().postDelayed(
             {
-                val i = Intent(this@MainActivity, HomeActivity::class.java)
-                startActivity(i)
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
                 finish()
-            }, SPLASH_TIME_OUT)
+            }, 3000)
     }
 }
 
